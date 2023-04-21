@@ -1,11 +1,10 @@
 
 import './App.css';
-import './hello.css'
-import Hello from './01/Hello';
+import MyClock from './02/MyClock';
 
 function App() {
   return (
-    <Hello />
+    <MyClock />
   );
 }
 
