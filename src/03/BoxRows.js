@@ -1,20 +1,29 @@
+
 import {useState} from "react";
 
-const BoxRows = (probs) => {
 
-    const mvlist = [...probs.mv];
+const BoxRows = ({mv}) => {
+
+    const mvlist = mv;
     //console.log("boxrows", mvlist);
 
-    const [footTag, setFootTag] = useState('');
-    const showMv = (row) => {
-        setFootTag(row.movieCd);
+
+   
+    let trTags = [];
+    const [trFoot, settrFoot] = useState("영화를 선택해 주세요.");
+
+     //클릭된 자료 확인
+
+     const showMv = (line) => {
         
-        console.log(row);
+        
+        settrFoot("💙 ["+line.movieCd+"] "+line.movieNm + " 개봉일:" + line.openDt +" 💙");
+        
     }
 
-    let trTags = [];
+    
     for (let row of mvlist) {
-        //console.log(row.rank, row.movieNm, row.salesAmt, row.rankInten);
+        console.log(row.rank, row.movieNm, row.salesAmt, row.rankInten);
 
         let icon;
         var rank = parseInt(row.rankInten);
@@ -29,7 +38,7 @@ const BoxRows = (probs) => {
         }
 
         trTags.push(
-            <tr className = "mytr" key={row.movieCd} onClick={() => showMv(row)}>
+            <tr className = "mytr" key = {row.movieCd} onClick={()=>showMv(row)}>
             <td>{row.rank}</td>
             <td>{row.movieNm}</td>
             <td>{parseInt(row.salesAmt).toLocaleString()}</td>
@@ -41,17 +50,20 @@ const BoxRows = (probs) => {
 
     }
 
-    //console.log(trTags);
+    console.log(trTags);
     return (
         <>
-        <tbody>
-            {trTags}
-        </tbody>
-        <tfoot>
-            <tr>
-            <td colSpan={4}>{footTag}</td>
-            </tr>
-        </tfoot>
+            <tbody>
+                    {trTags}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                    {trFoot}
+                    </td>
+                </tr>
+                    
+            </tfoot>
         </>
     );
 }

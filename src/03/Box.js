@@ -9,7 +9,7 @@ const Box = () => {
     return (
         <main className="container">
             <article>
-                <header><h1>일일박스오피스</h1></header>
+                <header><h1>일일 박스오피스</h1></header>
                 <table>
                     <thead>
                         <tr>
@@ -23,7 +23,7 @@ const Box = () => {
                         <BoxRows mv={mvlist}/>
                     
                 </table>
-            </article>
+            </article> 
         </main>
     );
 }
