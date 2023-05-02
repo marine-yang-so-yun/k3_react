@@ -1,0 +1,47 @@
+*   {
+    font-family:"KOFIH 이종욱체 TTF";
+
+}
+
+header h1{
+    text-align:center;
+    font-family:"KOFIH 이종욱체 TTF";
+}
+
+.dateClass  {
+    background-color: aliceblue;
+    font-family:"KOFIH 이종욱체 TTF";
+    text-align:center;
+    border: dashed;
+    border-width: 1px;
+    border-color:rgb(3, 3, 106)
+}
+
+.dateClass2 {
+    background-color: rgb(168, 193, 215);
+    font-family:"KOFIH 이종욱체 TTF";
+    text-align:center;
+    border: dashed;
+    border-width: 1px;
+    border-color:rgb(3, 3, 106)
+}
+.dateClass:hover    {
+    background-color: rgb(168, 193, 215);
+}
+
+
+.sp1    {
+    font-weight: bold;
+}
+
+.sp2    {
+    color:rgb(93, 93, 181);
+}
+
+.sp3    {
+    color:rgb(59, 59, 59);
+}
+
+.sp4    {
+    color:rgb(148, 71, 71);
+}
