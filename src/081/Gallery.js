@@ -74,7 +74,9 @@ const Gallery = () => {
             <form>
             <article>
                     <header>
-                        <h1>한국관광공사_관광사진 정보</h1>
+                        <img src="./31416.jpg" />
+                        <h1>✈ 한국관광공사 관광사진 정보 ✈</h1>
+                        
                     </header>
                     <div className="grid">                        
                         <div>
