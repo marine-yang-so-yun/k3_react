@@ -6,6 +6,7 @@ import './App.css';
 //import MyDiv from './04/MyDiv';
 
 //import Frcst from './05/Frcst';
+import Gallery from './081/Gallery';
 
 import Taccident from './06/Taccident'
 function App() {
@@ -15,7 +16,8 @@ function App() {
    //<Box />
     //<MyDiv />
     //<Frcst />
-    <Taccident />
+    //<Taccident />
+    <Gallery />
   );
 }
 

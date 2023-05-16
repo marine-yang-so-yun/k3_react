@@ -10,15 +10,13 @@ const Taccident = () => {
 
     c1 = new Set(c1);
     c1 = [...c1];
-    console.log(c1);
 
     let c2 = data.map((item) => [item.사고유형_대분류, item.사고유형_중분류]);
-    console.log(c2);
 
 
     const [sel1, setsel1] = useState(0); //대분류선택
     const [sel2, setsel2] = useState([]); //중분류선택
-
+    const [selData, setselData] = useState([]);
 
     useEffect(() => {
         console.log('Taccident sel1 useEffect []', sel1);
@@ -27,7 +25,19 @@ const Taccident = () => {
         console.log('Taccident sel1 useEffect sel1', sel1);
     } ,[sel1]);
     useEffect(() => {
+        console.log('Taccident sel1 useEffect sel2', sel2);
+        let temp = data.filter((item) => item.사고유형_대분류 === sel2[0]&&
+        item.사고유형_중분류 == sel2[1]);
+        setselData(temp[0]);
+    } ,[sel2]);
+
+    useEffect(() => {
+        console.log(selData);
+    }, [selData])
+    
+    useEffect(() => {
         console.log('Taccident sel1 useEffect', sel1);
+        console.log('Taccident sel1 useEffect', sel2);
     });
 
 
