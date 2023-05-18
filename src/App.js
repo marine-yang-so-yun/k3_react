@@ -6,18 +6,23 @@ import './App.css';
 //import MyDiv from './04/MyDiv';
 
 //import Frcst from './05/Frcst';
-import Gallery from './081/Gallery';
+//import Gallery from './081/Gallery';
+//import RouteMain from './09/RouteMain'
+
+import Fcst from './10/Fcst';
 
 import Taccident from './06/Taccident'
 function App() {
   return (
     //<MyClock />
-    //<Hello />
+    //<Hello />                                                           
    //<Box />
     //<MyDiv />
     //<Frcst />
     //<Taccident />
-    <Gallery />
+    //<Gallery />
+    //<RouteMain />
+    <Fcst />
   );
 }
 
