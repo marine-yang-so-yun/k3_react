@@ -1,6 +1,23 @@
-const FcstTable = () => {
+import getcode from "./getcode.json";
+
+const FcstTable = (props) => {
+
+  const concept = props.name;
+
+  const ops = getcode.map((item) => {
+
+    if (item.예보구분 == concept) {return <option>{item['항목명']}({item['항목값']})</option>}
+    
+  }  
+    
+  );
+
 
     return (
+      <>
+        <select id = 'option'>
+          {ops}
+        </select>
         <table>
         <thead>
           <tr>
@@ -11,7 +28,10 @@ const FcstTable = () => {
 
           </tr>
         </thead>
+        <tbody>
+        </tbody>
         </table>
+        </>
     );
 
 }
