@@ -26,7 +26,7 @@ const UltraSrtFcst = () => {
         let date2 = date.replaceAll("-","");
     
     
-        let url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=IXD5NXoWpSGmpa%2BAHRHivZDIWVOy1qFBlPANSqYvZVvR3iTezrZeQEvv0yRYFHxIojxXRzgeRfK9zYyGZm1MMQ%3D%3D&numOfRows=10&dataType=json&pageNo=1";
+        let url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=IXD5NXoWpSGmpa%2BAHRHivZDIWVOy1qFBlPANSqYvZVvR3iTezrZeQEvv0yRYFHxIojxXRzgeRfK9zYyGZm1MMQ%3D%3D&numOfRows=100&dataType=json&pageNo=1";
         url = url + "&base_date=" + date2;
         url = url + "&base_time=0630";
         url = url + "&nx=" + xValue;

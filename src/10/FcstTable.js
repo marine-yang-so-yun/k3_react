@@ -1,19 +1,18 @@
 import getcode from "./getcode.json";
 import { useState, useEffect } from "react";
 
-const FcstTable = (props) => {
+const FcstTable = (probs) => {
 
-  const concept = props.name;
-  const data = props.items;
+  const concept = probs.name;
+  const data = probs.items;
   const [optionValue, setOption] = useState();
   const [datas, setDatas] = useState();
   let dataTemp = [];
   
+  console.log(data);
 
   const saveOption = event => {
     setOption(event.target.value);
-    
-   
   }
 
   const ops = getcode.map((item) => {
@@ -30,23 +29,26 @@ const FcstTable = (props) => {
 
     if (optionValue == null) return;
 
+    const optionValue1 = optionValue.split("(")[0];
     const optionValue2 = optionValue.slice(-4).replaceAll(")", "");
     
     var temp = "";
     
-    data.item.filter((things) => {
+    dataTemp = data.item.map((things) => {
 
       if (things.category == optionValue2)  {
-      
-        dataTemp.push(<td>{things.category}</td>)
-        dataTemp.push(<td>{things.baseDate}</td>)
-        dataTemp.push(<td>{things.baseTime}</td>)
-        dataTemp.push(<td>{things.fcstValue}</td>)
         
-        console.log(things);
-        setDatas(dataTemp);
+        return (
+          <tr>
+            <td>{optionValue1}</td>    
+            <td>{things.fcstDate}</td>
+            <td>{things.fcstTime}</td>
+            <td>{things.fcstValue}</td>                                                            
+          </tr>
+        )
       }
     })
+    setDatas(dataTemp);
 
     
 }, [optionValue])
