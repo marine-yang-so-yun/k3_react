@@ -8,7 +8,9 @@ import './App.css';
 //import Gallery from './081/Gallery';
 //import RouteMain from './09/RouteMain'
 //import MyRef from './07/MyRef';
-import Fcst from './10/Fcst';
+//import Fcst from './10/Fcst';
+import Fcst from './101/Fcst'
+
 
 import Taccident from './06/Taccident'
 function App() {
