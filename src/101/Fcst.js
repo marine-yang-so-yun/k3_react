@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import FcstTable from './FcstTable';
 const Fcst = () => {
 
 
@@ -30,37 +31,9 @@ const Fcst = () => {
 
     }, []);
 
-    useEffect(() => {
-        if (items === undefined)    return;
-
-        let temp = items.map((i) => 
-            <tr>
-                <td>{i.category}</td>
-                <td>{i.fcstDate}</td>
-                <td>{i.fcstTime}</td>
-                <td>{i.fcstValue}</td>
-            </tr>
-        );
-        console.log('items', items);
-        setTrTags(temp);
-    }, [items]);
     return (
         <main className='container'>
-            <article>
-                <header><h1>기상청 초단기예보</h1></header>
-                <table>
-                    <thead>
-                        <tr>
-                        <th>자료구분코드</th>
-                            <th>예측일자</th>
-                            <th>예측시간</th>
-                            <th>예보값</th>
-                        </tr>
-                    </thead>
-                    {items && trTags}
-
-                </table>
-            </article>
+            {items && <FcstTable items={items} gubun="초단기예보"/>}
         </main>
 
     );

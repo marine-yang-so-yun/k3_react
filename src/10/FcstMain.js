@@ -67,7 +67,7 @@ const FcstMain = () => {
             </div>
             <footer>
                 <Link to ={`/ultra/${dateValue}/${areaValue}/${xValue}/${yValue}`} role='button'>초단기예보</Link>
-                <Link to ='/village' role='button'>단기예보</Link>
+                <Link to ={`/village/${dateValue}/${areaValue}/${xValue}/${yValue}`} role='button'>단기예보</Link>
             </footer>
         </article>
 

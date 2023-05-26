@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 
 const FcstTable = (probs) => {
 
+  
   const concept = probs.name;
   const data = probs.items;
   const [optionValue, setOption] = useState();
   const [datas, setDatas] = useState();
+  const [unit, setUnit] = useState();
   let dataTemp = [];
-  
-  console.log(data);
+  console.log(concept);
 
   const saveOption = event => {
     setOption(event.target.value);
@@ -32,8 +33,13 @@ const FcstTable = (probs) => {
     const optionValue1 = optionValue.split("(")[0];
     const optionValue2 = optionValue.slice(-4).replaceAll(")", "");
     
-    var temp = "";
-    
+    getcode.map((item) => {
+      if (optionValue2 == item.항목값) {
+        setUnit(item.단위);
+      }
+
+    });
+
     dataTemp = data.item.map((things) => {
 
       if (things.category == optionValue2)  {
@@ -43,7 +49,7 @@ const FcstTable = (probs) => {
             <td>{optionValue1}</td>    
             <td>{things.fcstDate}</td>
             <td>{things.fcstTime}</td>
-            <td>{things.fcstValue}</td>                                                            
+            <td>{things.fcstValue}{unit}</td>                                                            
           </tr>
         )
       }
@@ -51,7 +57,10 @@ const FcstTable = (probs) => {
     setDatas(dataTemp);
 
     
-}, [optionValue])
+}, [optionValue, unit])
+
+
+
 
 
   

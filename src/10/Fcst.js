@@ -13,7 +13,7 @@ const Fcst = () => {
         <Routes>
             <Route path ='/' element={<FcstMain />} />
             <Route path ='/ultra/:item/:item2/:xValue/:yValue' element={<UltraSrtFcst />} />
-            <Route path = '/village' element={<VillageFcst />} />
+            <Route path = '/village/:item/:item2/:xValue/:yValue' element={<VillageFcst />} />
         </Routes>
         </main>
         </BrowserRouter>
