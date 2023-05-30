@@ -3,6 +3,7 @@ import FcstNav from './FcstNav';
 import UltraSrtFcst from './UltraSrtFcst';
 import VillageFcst from './VillageFcst';
 import FcstMain from './FcstMain';
+import styles from './Fcst.module.css' ;
 const Fcst = () => {
 
     return (

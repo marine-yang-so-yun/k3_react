@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import xy from "./getxy.json";
 import {useState, useEffect} from 'react';
-
+import styles from './FcstMain.module.css' ;
 
 
 
@@ -52,8 +52,8 @@ const FcstMain = () => {
     
     return (
         <>
-        <article>
-            <header><h1>단기예보 선택</h1></header>
+        <article id="mainId">
+            <header ><h1 id="mainHeader">단기예보 선택</h1></header>
             <div className='grid'>
                 <div>
                     <input onChange = {saveDate} type='date' id='dt' name='dt' />
@@ -66,8 +66,8 @@ const FcstMain = () => {
                 </div>
             </div>
             <footer>
-                <Link to ={`/ultra/${dateValue}/${areaValue}/${xValue}/${yValue}`} role='button'>초단기예보</Link>
-                <Link to ={`/village/${dateValue}/${areaValue}/${xValue}/${yValue}`} role='button'>단기예보</Link>
+                <Link to ={`/ultra/${dateValue}/${areaValue}/${xValue}/${yValue}`} role='button' class="bt">초단기예보</Link>
+                <Link to ={`/village/${dateValue}/${areaValue}/${xValue}/${yValue}`} role='button' class="bt">단기예보</Link>
             </footer>
         </article>
 
